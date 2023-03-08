@@ -3,24 +3,15 @@ import HaikuChecker from "./../src/js/haikuCheck.js";
 describe("HaikuChecker", () => {
   describe("constructor", () => {
     test("should correctly create a Haiku object with three lines", function () {
-      let haikuCheck = new HaikuChecker(
-        "This is line one",
-        "This is line two",
-        "This is line three"
-      );
-      expect(haikuCheck.line1).toEqual("This is line one");
-      expect(haikuCheck.line2).toEqual("This is line two");
-      expect(haikuCheck.line3).toEqual("This is line three");
+      const haikuChecker = new HaikuChecker("this is a test haiku");
+      expect(haikuChecker.input).toEqual("this is a test haiku");
     });
   });
-
-  describe("checkLines", () => {
-    test("should correctly check the number of line breaks", function () {});
-    let haikuCheck = new HaikuChecker(
-        "This is line one",
-        "This is line two",
-        "This is line three"
-      );
-      expect(haikuCheck.checkLines()).toEqual(true);
+  describe("countLines", () => {
+    it("should return the correct number of lines for a multi-line input string", () => {
+      const input = "this is a test haiku";
+      const haikuChecker = new HaikuChecker(input);
+      expect(haikuChecker.countLines()).toEqual(1);
+    });
   });
 });
