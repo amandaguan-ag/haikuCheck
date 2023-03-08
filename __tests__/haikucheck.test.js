@@ -14,4 +14,11 @@ describe("HaikuChecker", () => {
       expect(haikuChecker.countLines()).toEqual(1);
     });
   });
+  describe("checkSyllables", () => {
+    it("should correctly verify whether line 1 satisfy the 5 syllable rules", () => {
+      const input = "An old silent pond";
+      const haikuChecker = new HaikuChecker(input);
+      expect(haikuChecker.checkSyllables()).toEqual(true);
+    });
+  });
 });
