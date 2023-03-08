@@ -1,21 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // new line
 
-const ESLintPlugin = require('eslint-webpack-plugin');   !
+const ESLintPlugin = require('eslint-webpack-plugin');   // new line!
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devServer: {                 
-    // contentBase: './dist'      
+  devServer: {                 // new line
+    // contentBase: './dist'      // new line
     static: './'
-  },                           
-  devtool: 'eval-source-map',  
+  },                           // new line
+  devtool: 'eval-source-map',  // new line
   plugins: [
-    new ESLintPlugin(), !
+    new ESLintPlugin(), // new line!
     new CleanWebpackPlugin({
       verbose: true
     }),
